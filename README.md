@@ -10,7 +10,7 @@ npm install -g @angular/cli
 
 #### Then follow these steps:
 
-   1.  Download this repository
+   1.  Go to directory
 
        ```bash
        cd ng-demo
