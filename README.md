@@ -27,7 +27,10 @@ npm install -g @angular/cli
         ```bash
         npm start
         ```
-
+   4. Run production build
+       
+        ng build --prod
+       
 ### Run the tests
 
  Run this CLI command to execute the unit tests for the library.
