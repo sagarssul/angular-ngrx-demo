@@ -1,0 +1,64 @@
+<div class="page-container">
+  <div class="row mb-4">
+    <div class="col-sm-12">
+      <div class="card">
+        <form [formGroup]="contactForm">
+          <div class="card-header">
+            <strong>Contact Details</strong>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input type="text" class="form-control" formControlName="firstName" name="firstName" placeholder="Enter first name">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" class="form-control" formControlName="lastName" name="lastName" placeholder="Enter last name">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="text" class="form-control" formControlName="email" name="email" placeholder="Enter email">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="phoneNumber">Phone Number</label>
+                  <input type="text" class="form-control" formControlName="phoneNumber" name="phoneNumber" placeholder="Enter phone number">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="status">Status</label>
+                  <select class="form-control" formControlName="status" name="status">
+                    <option value="">Select</option>
+                    <option>Active</option>
+                    <option>Inactive</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <input type="hidden" formControlName="id" name="id">
+          </div>
+          <div class="card-footer">
+            <button *ngIf="!contactForm.get('id').value" class="btn btn-md btn-primary" type="button" [disabled]="contactForm.invalid"
+              (click)="saveContact()">
+              Save
+            </button>
+            <button *ngIf="contactForm.get('id').value" class="btn btn-md btn-primary" type="button" [disabled]="contactForm.invalid"
+              (click)="updateContact()">
+              Update
+            </button>
+            <button class="btn btn-md btn-danger mx-3" type="button" (click)="clearForm()">Clear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <app-grid [gridDetails]="gridDetails" (updateDetails)="setContact($event)" (deleteDetails)="deleteContact($event)"></app-grid>
+</div>
