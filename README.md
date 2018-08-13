@@ -27,9 +27,13 @@ npm install -g @angular/cli
         ```bash
         npm start
         ```
+        
    4. Run production build
        
+        ```bash
         ng build --prod
+        ```
+        
        
 ### Run the tests
 
