@@ -27,8 +27,15 @@ npm install -g @angular/cli
         ```bash
         npm start
         ```
-        
-   4. Run production build
+   
+   4.  Open your browser on
+   
+       ```bash
+       http://localhost:4200/
+       ```
+       
+       
+   5. Run production build
        
         ```bash
         ng build --prod
